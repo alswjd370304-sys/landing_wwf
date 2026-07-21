@@ -5,9 +5,31 @@
     --color-dark: #111;
     --color-light: #fff;
     --color-gray: #ddd;
-    --color-gradient-dark: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,1));
+    --color-gradient-dark: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,1));
 
     /*  글자크기 */
+    /* 모바일 */
+    --m-font-size-base: 1rem;/* 내용 */
+    --m-font-size-sm: 0.875rem;/* 버튼 */
+    --m-font-size-lg: 1.75rem;/* 제목 */
+    /* 태블릿 */
+    --t-font-size-base:1rem;
+    --t-font-size-sm:1.25rem;
+    --t-font-size-lg:2.5rem;
+    /* 데스크탑 */
+    --d-font-size-base:2.5rem;
+    --d-font-size-sm:1.125rem;
+    --d-font-size-md:1.375rem;
+    --d-font-size-lg:3.125rem;
+
+    /* 모서리반경 */
+    --m-border-radius: 25px;
+
+    /* 글자굵기 */
+    --font-weight-m: 500;
+
+    /* 행간 */
+    --line-height: 1.4;
 
     /* 크기,여백 */
     /* 모바일 */
@@ -23,7 +45,6 @@
     --icon-md:16px;
     --icon-lg:24px;
     --icon-xl:48px;
-
 
 } /* e:root */
 

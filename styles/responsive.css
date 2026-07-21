@@ -1,0 +1,68 @@
+/* 반응형 미디어쿼리 규칙 */
+/* @media screen and (minmax규착) {실행자와 값} */
+/* index.css 모바일 기본상태 */
+/* 모바일로 시작했기 때문에 reponsive.css에서는 점점 큰 값을 설계하는 순서로 진행함. */
+/* 미디어쿼리 규칙 내에서 작성하는 선택자는 행당 규칙이일 때 달라지는 디자인 앖만 작성한다. */
+/* 기존(이전규칙)과 동일한 디자인 모습은 작성하지 않으면 자동으로 유지된다. */
+@media screen and (min-width:760px) { /* 760이상일 때(태블릿모습시작) */
+    /* 선택자 {속성:값;, 속성:값;} */
+    #wrap {min-height: 1080px;}
+    #wrap .intro {}
+    #wrap .intro::after {}
+    #wrap .intro .container {height: 672px;}
+    #wrap .intro .container .logo {
+        width:var(--icon-xl);
+        left:61px; top:52px;
+    }
+    #wrap .intro .container .logo img {}
+    #wrap .intro .container .title {
+        font-size: var(--t-font-size-lg);
+        margin-bottom: 16px;
+    }
+    #wrap .intro .container .btn_g {
+        gap:0;
+        position: static; 
+        /* absolute 해제목적의 변경값 -> relative (포지션의 기능을 살리고 싶을 때/ z-index, left, top등) */
+        /* absolute 해제목적의 변경값 -> static (포지션 기능을 아예 해제, 위 기능을 사용불가 )*/
+        bottom:0;
+    }
+    #wrap .intro .container .btn_g a {
+        padding:0;
+        border-radius: 0;
+    }
+    #wrap .intro .container .btn_g .sponser_btn {
+        font-size: var(--t-font-size-base);
+        padding: 12px 40px 12px 20px;
+        border-radius: 30px;
+    } 
+    #wrap .intro .container .btn_g .sponser_qna_btn {
+        font-size: var(--t-font-size-base);
+        padding: 8px 32px 8px 15px;
+        border-radius: 25px;
+        position: absolute; right: 68px; bottom:26px;
+    }
+}/* e:min760 */
+/* --------------------------------------------------------태블릿->데스크탑 */
+@media screen and (min-width:1120px) {
+    #wrap {min-height: 1080px;}
+    #wrap .intro {}
+    #wrap .intro::after {}
+    #wrap .intro .container {max-width:1120px; height:878px; margin: var(--spacing-auto);}
+    #wrap .intro .container .logo {
+        width:var(--icon-xl);
+        left:0; top:61px;
+    }
+    #wrap .intro .container .logo img {}
+    #wrap .intro .container .title {font-size: var(--d-font-size-lg);}
+    #wrap .intro .container .btn_g {}
+    #wrap .intro .container .btn_g a {}
+    #wrap .intro .container .btn_g .sponser_btn {
+        font-size: var(--d-font-size-sm);
+        padding: 14px 45px 14px 25px;
+        border-radius: 30px;
+    } 
+    #wrap .intro .container .btn_g .sponser_qna_btn {
+        padding: 8px 32px 8px 15px;
+        border-radius: 25px;
+    }
+} /* e:min1120 */

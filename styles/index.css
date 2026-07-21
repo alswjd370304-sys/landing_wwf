@@ -1,23 +1,72 @@
-/* ------------------------------------------------모바일 레이아웃 시작 */
-#wrap {}
+/* 모바일 레이아웃 시작 */
+#wrap {
+    min-width:320px;
+    /* width:440px; */
+    /* 1. 전체레이아웃 너비를 고정이 아닌 가변형으로 만들기 */
+    /* 2. 화면너비가 너무 작아지면 레이아웃이 깨지므로 최소 여기까지만 작아져야한다는 뜻으로 모바일 최소 너비를 체크하고 CSS최소너비 설정하기 */
+    min-height: 956px; /* 피그마 최소높이제한(그 이상은 max-content(hug) 기본) */
+    margin: var(--spacing-auto);
+    background-color: aqua;
+}
 /* ------------------------------------------------1행 제목+후원 */
 #wrap .intro {
     background-image: url(../images/bg1.png);
     background-size: cover; /* 피그마 - 채우기 */
     /* intro에 크기 입력 시 container의 height:100%로 설정 */
-    position: relative;
+    position: relative; /* after에 들어간 absolute의 기준 */
+    background-position: center;
 }
 #wrap .intro::after { /* 이미지 위 깔리는 반투면 그라데이션 용도 가상 선택자 */
     background: var(--color-gradient-dark);
     content: ''; 
     display: block;
-    width: 100% ; height: 100% ;
-    position: absolute; left: 0; top: 0;
+    width: 100% ; height: 100%; /* positon:relative의 크기만큼 채우겠다는 의미 */
+    position: absolute; left: 0; top: 0; z-index: 80;
 }
-#wrap .intro .container {height: 565px;} /* 실제 내용태그들을 묶는 레이아웃태그에 크기 입력 권장 */
-#wrap .intro .container .logo {width:var(--icon-lg);}
+#wrap .intro .container {
+    height: 565px; /* 실제 내용태그들을 묶는 레이아웃태그에 크기 입력 권장 */
+    position: relative;
+    z-index: 90;
+} 
+#wrap .intro .container .logo {
+    width:var(--icon-lg);
+    position: absolute; left:16px; top:52px;
+}
 #wrap .intro .container .logo img {width: 100%;}
-#wrap .intro .container .logo .title {}
-#wrap .intro .container .logo .btn_g {}
-#wrap .intro .container .logo .btn_g .sponser_btn {}
-#wrap .intro .container .logo .btn_g .sponser_qna_btn {}
+#wrap .intro .container .title {
+    font-size: var(--m-font-size-lg);
+    color: var(--color-light);
+    text-align: center;
+    line-height: var(--line-height);
+    font-weight: var(--font-weight-m);
+}
+#wrap .intro .container .btn_g {
+    /* display: flex;
+    flex-flow: column nowrap;
+    align-items: center; */
+    gap: 12px;
+    position: absolute; left: center; bottom: 28px;
+}
+#wrap .intro .container .btn_g a {
+    background-color: var(--color-primary);
+    border-radius: var(--m-border-radius);
+    color: var(--color-light);
+    padding: 8px 32px 8px 15px;
+    /* 화살표 연결 */
+    background-image: url(../images/arrow_m.svg);
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    /* filter:inver(1) 화살표 반전 -> after */
+}
+/* #wrap .intro .container .btn_g a::after {
+    content:'';
+    (.btn_g a에 있는 배경이미지를 after로 옮긴 것)
+    display:block; 
+    width: 12px; height: 12px;
+    background-size:100%;
+    background-image: url(../images/arrow_m.svg);
+    filter:invert (1);
+    flex-row-between을 html a에 삽입하면 됨. 아래로 내려갔던 화살표가 글자와 수평으로 나열됨.
+    }  */
+#wrap .intro .container .btn_g .sponser_btn {} 
+#wrap .intro .container .btn_g .sponser_qna_btn {}
