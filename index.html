@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./styles/var.css"><!-- 변수 -->
     <link rel="stylesheet" href="./styles/index.css"><!-- 전체디자인 -->
     <link rel="stylesheet" href="./styles/responsive.css"><!-- 기기변경 시 반응형에 의해 변경되는 디자인값 -->
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" defer></script>
 </head>
 <body>
     <div id="wrap">
@@ -25,7 +25,54 @@
                     <a href="#" class="sponser_qna_btn">후원관련 자주 묻는 질문 보기</a>
                 </div>
             </div>
-        </section><!-- e:section -->
+        </section><!-- e: 1행 intro -->
+        <section class="quiz"> <!-- 배경용 -->
+            <!-- 정답보기버튼 클릭 시 실행되는 오답박스 -->
+            <div class="answer_popup_bg flex-col-center"><!--전체 body를 덮는 어두운 배경 -->
+                <div class="answer_box flex-col-center"><!-- 실제 오답박스 부모영역 -->
+                    <button type="button" id="answer_close_btn">
+                        <img src="./images/close.svg" alt="오답박스 닫기">
+                    </button>
+                    <h2>오답입니다!</h2>
+                    <p>해마다 북극빙하면적이 감소하고 있습니다.<br>북극곰을 지키는 후원을 부탁드립니다</p>
+                </div>
+            </div>
+            <!-- 퀴즈 컨테이너 시작 -->
+            <div class="container"> <!-- M-T(채우기)/D-너비용 -->
+                <!-- 2-1.퀴즈 -->
+                <form action="#" method="get" id="quiz_frm">
+                    <h2>Quiz</h2>
+                    <h3>20년 사이 북극 빙하 면적은 몇 % 감소했을까요?</h3>
+                    <ul class="quiz_list">
+                        <li>
+                            <input type="radio" name="quiz_g" id="anwer30" value="anwer30">
+                            <label for="anwer30">30%</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="quiz_g" id="anwer40" value="anwer40">
+                            <label for="anwer40">40%</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="quiz_g" id="anwer50" value="anwer50">
+                            <label for="anwer50">50%</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="quiz_g" id="anwer60" value="anwer60">
+                            <label for="anwer60">60%</label>
+                        </li>
+                    </ul>
+                    <p><button tpye="button" id="quiz_btn">정답확인하기</button></p>
+                </form> <!-- e:2-1.퀴즈 -->
+                <!-- 2-2.현황 -->
+                <div class="status">
+                    <div class="situation">
+                        <h3 class="status_title">퀴즈참여현황</h3>
+                        <p class="status_table"><em>38,387</em>명 참여</p>
+                    </div>
+                    <p class="update">*퀴즈참여현황은 매주 업데이트됩니다</p>
+                </div><!-- e: 2-2.현황 -->
+            </div><!-- e: container -->
+        </section><!-- e: 2행 quiz -->
     </div>
 </body>
 </html>

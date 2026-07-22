@@ -14,7 +14,7 @@
     background-size: cover; /* 피그마 - 채우기 */
     /* intro에 크기 입력 시 container의 height:100%로 설정 */
     position: relative; /* after에 들어간 absolute의 기준 */
-    background-position: center;
+    background-position: center top;
 }
 #wrap .intro::after { /* 이미지 위 깔리는 반투면 그라데이션 용도 가상 선택자 */
     background: var(--color-gradient-dark);
@@ -70,3 +70,87 @@
     }  */
 #wrap .intro .container .btn_g .sponser_btn {} 
 #wrap .intro .container .btn_g .sponser_qna_btn {}
+
+/* ---------------------------------------------------2행 퀴즈 */
+#wrap .quiz {
+    background-image: url(../images/quiz_bg.png);
+    /* 반응형 큰 배경이미지 사용 시 권장 속성: 값 */
+    background-size: cover;
+    background-position: center top;
+    padding: 40px 15px;
+}
+#wrap .quiz .container {}
+/* ---------------------------------------------------2행 2-1.퀴즈 */
+#wrap .quiz .container #quiz_frm {margin-bottom: var(--spacing-m-s);}
+#wrap .quiz .container #quiz_frm > * {margin-bottom: var(--spacing-m-s) ;}
+#wrap .quiz .container #quiz_frm * {color: var(--color-light);}
+#wrap .quiz .container #quiz_frm h2 {font-size: var(--m-font-size-xs);}
+#wrap .quiz .container #quiz_frm h3 {font-size: var(--m-font-size-base);}
+#wrap .quiz .container #quiz_frm .quiz_list {}
+#wrap .quiz .container #quiz_frm .quiz_list li {margin-bottom: var(--spacing-m-xs);}
+#wrap .quiz .container #quiz_frm .quiz_list li:nth-child(4) {margin: 0;}
+#wrap .quiz .container #quiz_frm .quiz_list li input[name=quiz_g] {display: none;}
+/* ---------------------------------------------------input체크상태에 따른 이미지변경 */
+#wrap .quiz .container #quiz_frm .quiz_list li input[name=quiz_g]:checked + label {
+    background-image: url(../images/quiz_on.svg);
+}
+#wrap .quiz .container #quiz_frm .quiz_list li label {
+    font-size: var(--m-font-size-base);
+    background-image: url(../images/quiz_off.svg);
+    background-repeat: no-repeat; background-position: left center;
+    padding-left: 32px;
+}
+#wrap .quiz .container #quiz_frm p {margin: 0;}
+#wrap .quiz .container #quiz_frm p #quiz_btn {
+    font-size: var(--m-font-size-);
+    display: block;
+    width: 100%;
+    background-color: var(--color-dark);
+    padding: 15px 0;
+    border-radius: var(--m-border-radius);
+}
+/* ---------------------------------------------------2행 2-2.현황 */
+#wrap .quiz .container .status {}
+#wrap .quiz .container .status .situation {
+    border-radius: var(--m-border-radius);
+    border: 3px solid var(--color-primary);
+    background-color: var(--color-light);
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: var(--spacing-m-xs);
+}
+#wrap .quiz .container .status .situation .status_title {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    font-size: var(--m-font-size-base);
+    padding: 10px 15px;
+}
+#wrap .quiz .container .status .situation .status_table {
+    padding: 50px 0;
+    background-color: var(--color-light);
+    font-size: var(--m-font-size-lg);
+    color: var(--color-dark);
+    font-weight: 500;
+}
+#wrap .quiz .container .status .situation .status_table em {color: var(--color-primary);}
+#wrap .quiz .container .status .update {
+    text-align: right; 
+    color: var(--color-light);
+}
+/* -----------------------------------------------------2행 퀴즈 오답박스 */
+#wrap .quiz .answer_popup_bg {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed; left: 0; top: 0;
+    width: 100%; height: 100%; z-index: 900;
+}
+#wrap .quiz .answer_popup_bg .answer_box {
+    width: 250px; height: 150px; 
+    background-color: var(--color-light);
+    position: relative;
+}
+#wrap .quiz .answer_popup_bg .answer_box #answer_close_btn {
+    position: absolute; right: 10px; top:10px;
+}
+#wrap .quiz .answer_popup_bg .answer_box #answer_close_btn img {}
+#wrap .quiz .answer_popup_bg .answer_box h2 {font-size: var(--m-font-size-base); margin-bottom: 10px;}
+#wrap .quiz .answer_popup_bg .answer_box p {font-size: var(--m-font-size-sm); text-align: center;}
