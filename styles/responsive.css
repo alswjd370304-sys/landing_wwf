@@ -26,21 +26,6 @@
         /* absolute 해제목적의 변경값 -> static (포지션 기능을 아예 해제, 위 기능을 사용불가 )*/
         bottom:0;
     }
-    #wrap .intro .container .btn_g a {
-        padding:0;
-        border-radius: 0;
-    }
-    #wrap .intro .container .btn_g .sponser_btn {
-        font-size: var(--t-font-size-base);
-        padding: 12px 40px 12px 20px;
-        border-radius: 30px;
-    } 
-    #wrap .intro .container .btn_g .sponser_qna_btn {
-        font-size: var(--t-font-size-base);
-        padding: 8px 32px 8px 15px;
-        border-radius: 25px;
-        position: absolute; right: 68px; bottom:26px;
-    }
     /* ----------------------------------------------------2행 퀴즈 시작(태블릿시작) */
     #wrap .quiz {padding: 70px 60px;}
     #wrap .quiz .container {
@@ -75,6 +60,27 @@
     #wrap .quiz .container .status .situation .status_table em {}
     #wrap .quiz .container .status .update {font-size: var(--t-font-size-base);}
     /* ----------------------------------------------------2행 퀴즈 시작(태블릿종료) */
+    /* ----------------------------------------------------3행 비디오 시작 */
+    #wrap .video_bg {}
+    #wrap .video_bg .container {padding: 70px 60px;}
+    #wrap .video_bg .container h1 {font-size: var(--t-font-size-lg);}
+    #wrap .video_bg .container .video {}
+    #wrap .video_bg .container .video iframe {}
+    #wrap .video_bg .container .sponser_btn {
+        font-size: var(--t-font-size-base);
+        padding: 12px 40px 12px 20px;
+        border-radius: 30px;
+    }
+    /* ----------------------------------------------------4행 빙하면적 시작 */
+    #wrap .glacial_area {padding: 100px 60px;}
+    #wrap .glacial_area .container {}
+    #wrap .glacial_area .container .title {margin-bottom: 30px;}
+    #wrap .glacial_area .container .title h1 {font-size: var(--t-font-size-lg); margin-bottom: 25px;}
+    #wrap .glacial_area .container .title h1 span:nth-child(2) {display: inline-block;}
+    #wrap .glacial_area .container .title h1 span {}
+    #wrap .glacial_area .container .title p {font-size: var(--t-font-size-sm);}
+    #wrap .glacial_area .container .glacial_area_img {}
+    #wrap .glacial_area .container .glacial_area_img img {width: 100%;}
 }/* e:min760 */
 /* --------------------------------------------------------태블릿->데스크탑 */
 @media screen and (min-width:1120px) {
@@ -89,16 +95,6 @@
     #wrap .intro .container .logo img {}
     #wrap .intro .container .title {font-size: var(--d-font-size-lg);}
     #wrap .intro .container .btn_g {}
-    #wrap .intro .container .btn_g a {}
-    #wrap .intro .container .btn_g .sponser_btn {
-        font-size: var(--d-font-size-sm);
-        padding: 14px 45px 14px 25px;
-        border-radius: 30px;
-    } 
-    #wrap .intro .container .btn_g .sponser_qna_btn {
-        padding: 8px 32px 8px 15px;
-        border-radius: 25px;
-    }
     /* ------------------------------------------------------2행 퀴즈 데스크탑 시작 */
     #wrap .quiz {}
     #wrap .quiz .container {
@@ -130,4 +126,23 @@
     #wrap .quiz .container .status .situation .status_table em {}
     #wrap .quiz .container .status .update {font-size: var(--d-font-size-sm);}
     /* ------------------------------------------------------2행 퀴즈 데스크탑 종료 */
+    /* ----------------------------------------------------3행 비디오 시작 */
+    #wrap .video_bg {}
+    #wrap .video_bg .container {padding: 100px 15px;}
+    #wrap .video_bg .container h1 {font-size: var(--d-font-size-lg);}
+    #wrap .video_bg .container .video {}
+    #wrap .video_bg .container .video iframe {}
+    #wrap .video_bg .container .sponser_btn {
+        font-size: var(--d-font-size-sm);
+        padding: 14px 45px 14px 25px;
+    }
+    /* ---------------------------------------------------4행 빙하면적 시작 */
+    #wrap .glacial_area {padding: 120px 60px;}
+    #wrap .glacial_area .container {width:1120px;}
+    #wrap .glacial_area .container .title {margin-bottom: 38px;}
+    #wrap .glacial_area .container .title h1 {font-size: var(--d-font-size-lg); margin-bottom: 30px;}
+    #wrap .glacial_area .container .title h1 span {}
+    #wrap .glacial_area .container .title p {font-size: var(--d-font-size-base);}
+    #wrap .glacial_area .container .glacial_area_img {}
+    #wrap .glacial_area .container .glacial_area_img img {width: 100%;}
 } /* e:min1120 */

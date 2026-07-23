@@ -10,18 +10,18 @@
     /*  글자크기 */
     /* 모바일 */
     --m-font-size-base: 1rem;/* 내용 */
-    --m-font-size-xs: 1.375rem;
+    --m-font-size-xs: 1.375rem; /* 보조제목 */
     --m-font-size-sm: 0.875rem;/* 버튼 */
     --m-font-size-lg: 1.75rem;/* 제목 */
     /* 태블릿 */
-    --t-font-size-base:1rem;
-    --t-font-size-sm:1.25rem;
-    --t-font-size-lg:2.5rem;
+    --t-font-size-base:1rem; /* 버튼 */
+    --t-font-size-sm:1.25rem; /* 내용 */
+    --t-font-size-lg:2.5rem; /* 제목 */
     /* 데스크탑 */
-    --d-font-size-base:2.5rem;
-    --d-font-size-sm:1.125rem;
-    --d-font-size-md:1.375rem;
-    --d-font-size-lg:3.125rem;
+    --d-font-size-base:2.5rem; /*  */
+    --d-font-size-sm:1.125rem; /* 후원버튼 */
+    --d-font-size-md:1.375rem; /* 내용 */
+    --d-font-size-lg:3.125rem; /* 제목 */
 
     /* 모서리반경 */
     --m-border-radius: 25px;
@@ -53,6 +53,50 @@
 } /* e:root */
 
 /* 공통 디자인 Class */
+/*------------------------------ 공통 후원/질문하기 버튼 (모바일)*/
+.sponser_btn,.sponser_qna_btn {
+    background-color: var(--color-primary);
+    border-radius: var(--m-border-radius);
+    color: var(--color-light);
+    padding: 8px 32px 8px 15px;
+    display: block;
+}
+/* 후원하기 버튼 화살표 이미지 */
+.sponser_btn,.sponser_qna_btn {
+    background-image: url(../images/arrow_m.svg);
+    background-repeat: no-repeat;
+    background-position: 95% center;
+}
+/* ------------------------------공통 후원/질문버튼 (태블릿) */
+@media screen and (min-width:760px) {
+        .sponser_btn,.sponser_qna_btn {
+        padding:0;
+        border-radius: 0;
+    }
+    .sponser_btn {
+        font-size: var(--t-font-size-base);
+        padding: 12px 40px 12px 20px;
+        border-radius: 30px;
+    } 
+    .sponser_qna_btn {
+        font-size: var(--t-font-size-base);
+        padding: 8px 32px 8px 15px;
+        border-radius: 25px;
+        position: absolute; right: 68px; bottom:26px;
+    }
+}
+/* ------------------------------공통 후원/질문버튼 (데스크탑) */
+@media screen and (min-width:1120px) {
+    .sponser_btn {
+        font-size: var(--d-font-size-sm);
+        padding: 14px 45px 14px 25px;
+        border-radius: 30px;
+    } 
+    .sponser_qna_btn {
+        padding: 8px 32px 8px 15px;
+        border-radius: 25px;
+    }
+}
 .flex-row-center {
     display:flex; flex-flow: row nowrap;
     justify-content: center; align-items: center; 
