@@ -75,8 +75,11 @@
     #wrap .glacial_area {padding: 100px 60px;}
     #wrap .glacial_area .container {}
     #wrap .glacial_area .container .title {margin-bottom: 30px;}
-    #wrap .glacial_area .container .title h1 {font-size: var(--t-font-size-lg); margin-bottom: 25px;}
-    #wrap .glacial_area .container .title h1 span:nth-child(2) {display: inline-block;}
+    #wrap .glacial_area .container .title h1 {
+        font-size: var(--t-font-size-lg); margin-bottom: 25px;
+        flex-flow: row nowrap;
+    }
+    #wrap .glacial_area .container .title h1 span:nth-child(1) {margin-bottom: 0px;}
     #wrap .glacial_area .container .title h1 span {}
     #wrap .glacial_area .container .title p {font-size: var(--t-font-size-sm);}
     #wrap .glacial_area .container .glacial_area_img {}

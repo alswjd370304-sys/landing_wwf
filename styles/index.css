@@ -179,16 +179,27 @@
     margin-bottom: 20px;
 }
 #wrap .glacial_area .container .title h1 {
+    white-space: nowrap; /* 글자가 줄바꿈 안되도록 */
+    display: flex;
+    flex-flow: column nowrap;
     font-size: var(--m-font-size-xs);
     line-height: var(--line-height);
     margin-bottom: 14px;
     font-weight: var(--font-weight-m);
 }
-#wrap .glacial_area .container .title h1 span:nth-child(2) {display: block;}
+#wrap .glacial_area .container .title h1 span:nth-child(1) {margin-bottom: 6px;}
 #wrap .glacial_area .container .title h1 span em {
-    background-color: var(--color-light);
+    /* background-color: var(--color-light);
     color: var(--color-dark);
-    font-weight: var(--font-weight-m);
+    font-weight: var(--font-weight-m); */
+    color: black;
+    position: relative; z-index:10;
+}
+#wrap .glacial_area .container .title h1 span em::after {
+    content:''; display: block;
+    position: absolute; left: 0; bottom:0;
+    background-color: #fff;
+    width: 100%; height: 100%; z-index:-1;
 }
 #wrap .glacial_area .container .title p {
     font-size: var(--m-font-size-sm);
